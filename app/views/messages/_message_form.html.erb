@@ -1,0 +1,6 @@
+<%= simple_form_for message, remote: true, authenticity_token: true do |f| %>
+  <%= f.input :content, as: :text, label: :your_message, class: "form-control", data: {textarea: "message"} %>
+
+  <%= f.hidden_field :chatroom_id, value: chatroom.id %>
+  <%= f.button "send", class: "btn btn-primary", style: "display: none", data: {send: "message"} %>
+<% end %>
