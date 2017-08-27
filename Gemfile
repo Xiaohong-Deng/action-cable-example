@@ -37,6 +37,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
+gem 'will_paginate',           '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
+gem 'faker', '1.6.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

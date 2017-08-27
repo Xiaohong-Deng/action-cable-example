@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Faker::Lorem.words(20).each do |topic|
+  unless Chatroom.exists?(topic: topic)
+    Chatroom.create(topic: topic)
+  end
+end

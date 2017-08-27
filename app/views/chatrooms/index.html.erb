@@ -1,0 +1,11 @@
+<header>
+  <h1>Chat Rooms</h1>
+</header>
+
+<div class="chatrooms">
+  <% @chatrooms.each do |chatroom| %>
+    <h2><%= link_to chatroom.topic, chatroom %></h2>
+  <% end %>
+</div>
+
+<%= will_paginate %>
