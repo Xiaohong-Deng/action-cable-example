@@ -3,8 +3,12 @@
 </header>
 
 <div class="chatrooms">
-  <% @chatrooms.each do |chatroom| %>
-    <h2><%= link_to chatroom.topic, chatroom %></h2>
+  <% if user_signed_in? %>
+    <% @chatrooms.each do |chatroom| %>
+      <h2><%= link_to chatroom.topic, chatroom %></h2>
+    <% end %>
+  <% else %>
+    <h2>Please Sign up or Log in first</h2>
   <% end %>
 </div>
 
