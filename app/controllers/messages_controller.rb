@@ -3,9 +3,10 @@ class MessagesController < ApplicationController
     message = Message.new(message_params)
     message.user = current_user
     if message.save
-      ActionCable.server.broadcast 'messages_#{message.chatroom_id}',
+      ActionCable.server.broadcast 'messages',
         message: message.content,
-        user: message.user.username
+        user: message.user.username,
+        chatroom_id: message.chatroom_id
       head :ok
     else
       redirect_to chatrooms_path

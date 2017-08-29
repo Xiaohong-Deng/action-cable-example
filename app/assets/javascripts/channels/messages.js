@@ -3,8 +3,8 @@ App.chatrooms = App.cable.subscriptions.create("MessagesChannel", {
   connected: function() {},
   disconnected: function() {},
   received: function(data) {
-    $('#messages').removeClass('hidden');
-    return $('#messages').append(this.renderMessage(data));
+    $('#messages_' + data.chatroom_id).removeClass('hidden');
+    return $('#messages_' + data.chatroom_id).append(this.renderMessage(data));
   },
   renderMessage: function(data) {
     return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";

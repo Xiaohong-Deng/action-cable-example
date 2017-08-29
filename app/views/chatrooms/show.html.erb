@@ -3,11 +3,11 @@
 
 <div class="panel panel-default">
   <% if @chatroom.messages.any? %>
-    <div class="panel-body" id="messages">
+    <div class="panel-body" id="messages_<%= @chatroom.id %>">
       <%= render @chatroom.messages %>
     </div>
   <%else%>
-    <div class="panel-body hidden" id="messages">
+    <div class="panel-body hidden" id="messages_<%= @chatroom.id %>">
     </div>
   <%end%>
 </div>

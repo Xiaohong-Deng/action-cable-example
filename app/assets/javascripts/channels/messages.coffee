@@ -7,8 +7,8 @@ App.chatrooms = App.cable.subscriptions.create "MessagesChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#messages').removeClass 'hidden'
-    $('#messages').append this.renderMessage(data)
+    $('#messages_' + data.chatroom_id).removeClass 'hidden'
+    $('#messages_' + data.chatroom_id).append this.renderMessage(data)
 
   renderMessage: (data) ->
     "<p> <b>" + data.user + ": </b>" + data.message + "</p>"
