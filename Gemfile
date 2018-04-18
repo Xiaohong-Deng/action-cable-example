@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.3.1"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -48,6 +49,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'chromedriver-helper'
 end
 
 group :development do

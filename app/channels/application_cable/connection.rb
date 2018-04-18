@@ -4,6 +4,7 @@ module ApplicationCable
     # connect gets called once connection is made, so it's a special method name
     def connect
       self.message_user = find_verified_user
+      # prints out information about a user who has subscribed to a channel into the terminal
       logger.add_tags 'ActionCable', message_user.email
     end
 
